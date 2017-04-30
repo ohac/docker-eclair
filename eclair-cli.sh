@@ -54,13 +54,13 @@ case $1 in
 "open")
   # host, port, nodeId, fundingSatoshi, pushMsat
   $CURL -H "$JSON" -d \
-  '{ "method": "addhtlc", "params" : ["'$2'", '$3', "'$4'", '$5', '$6'] }' \
+  '{ "method": "open", "params" : ["'$2'", '$3', "'$4'", '$5', '$6'] }' \
   $TARGET | $JQ
   ;;
 "send")
   # amountMsat, paymentHash, nodeId
   $CURL -H "$JSON" -d \
-  '{ "method": "addhtlc", "params" : ['$2', "'$3'", "'$4'"] }' \
+  '{ "method": "send", "params" : ['$2', "'$3'", "'$4'"] }' \
   $TARGET | $JQ
   ;;
 esac
