@@ -5,4 +5,5 @@ docker run -it --rm \
   -v $PWD/dot.eclair:/root/.eclair \
   -v $PWD/dot.m2:/root/.m2 \
   --net container:monacoin \
+  --name eclair \
   eclair bash -c ./run2.sh
